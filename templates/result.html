@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<head>
+    <title>hello-world-network-webapp</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <meta http-equiv="refresh" content="5" />
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="form-group">
+            <label for="result">Result</label>
+                <div id="res">
+            </div>
+        </div>
+        <a href="{{ url_for('hello_world_form_index') }}" class="btn btn-default">Home</a>
+    </div>
+<script>
+    var res = JSON.stringify({{posted_data|tojson}}, null, 4); 
+    $("#res").html( "<pre><code>"+res+"</code></pre>" );
+</script>
+</body>
+
+</html>
